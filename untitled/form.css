@@ -1,0 +1,23 @@
+html body{
+    margin: 0px;
+}
+.barRecherche{
+    margin-top: 20%;
+    margin-left: 30%;
+
+}
+.retourArriere{
+    background-color: lightgray;
+    font-size: 10px;
+    margin-top: 0.5%;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    display: inline-block;
+}
+#barre{
+    width: 400px;
+}
+body{
+    background-color: beige;
+}
