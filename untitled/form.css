@@ -9,9 +9,10 @@ html body{
 .retourArriere{
     background-color: lightgray;
     font-size: 10px;
-    margin-top: 0.5%;
+    margin-top: 0.9%;
     padding-left: 5px;
     padding-right: 5px;
+
     position: relative;
     display: inline-block;
 }
@@ -19,5 +20,12 @@ html body{
     width: 400px;
 }
 body{
-    background-color: beige;
+    background-image: url("Pictures/Collection-national-flags.png");
+
 }
+.ArrowIcon{
+    display: inline;
+    margin-right: 10px;
+
+}
+.
