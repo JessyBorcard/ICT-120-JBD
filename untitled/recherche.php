@@ -1,7 +1,4 @@
-<html>
-<body>
-tu as cherché <?php
+<?php
+
 echo htmlspecialchars($_POST['barRecherche']);
-?>.
-</body>
-</html>
+header("location: ");

@@ -19,8 +19,9 @@ html body{
 #barre{
     width: 400px;
 }
-body{
-    background-image: url("Pictures/Collection-national-flags.png");
+body, html{
+    width: 100%;
+    height: 100%;
 
 }
 .ArrowIcon{
@@ -28,4 +29,23 @@ body{
     margin-right: 10px;
 
 }
-.
+#hero{
+    background-image: url("Pictures/Collection-national-flagsFade.png");
+    opacity: 0.5;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+#hero2{
+    background-image: url("");
+    opacity: 0.5;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
