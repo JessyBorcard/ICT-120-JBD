@@ -20,8 +20,8 @@ function backgroundChange() {
     var research = localStorage.research;
 
 
-
-        document.getElementById("hero2").style.backgroundImage= `url('Pictures/${research}.png')`;
+        document.getElementById("header1").innerText = research;
+        document.getElementById("hero2").src = `Pictures/${research}.png`;
 
 
 
