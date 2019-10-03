@@ -7,14 +7,9 @@ html body{
 
 }
 .retourArriere{
-    background-color: lightgray;
-    font-size: 10px;
-    margin-top: 0.9%;
-    padding-left: 5px;
-    padding-right: 5px;
 
-    position: relative;
-    display: inline-block;
+    margin-top: 0.9%;
+
 }
 #barre{
     width: 400px;

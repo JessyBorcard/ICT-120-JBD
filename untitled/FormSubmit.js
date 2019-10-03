@@ -1,27 +1,28 @@
 
-var research = "";
+
 function validateForm()
 {
-
- window['research'] = document.forms["barRechercheForm"]["q"].
+    var research = "";
+    research = document.forms["barRechercheForm"]["q"].value;
         if(research == ""){
                 alert("vous devez rechercher quelque chose");
         }else {
 
-                window.open("Recherchetransport.html" );
+                localStorage.research = research;
+                window.open("Recherchetransport.html");
 
         }
 
 }
-validateForm();
+
 function backgroundChange() {
 
+    var research = localStorage.research;
 
-    if(research == "south korea" || research == "korea"){
+
 
         document.getElementById("hero2").style.backgroundImage= `url('Pictures/${research}.png')`;
 
-    }
 
 
 }

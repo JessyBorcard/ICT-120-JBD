@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="FormSubmit.js" as="script" rel="script">
+    <link href="css/bootstrap.css" as="style" rel="stylesheet">
     <link href="form.css" as="style" rel="stylesheet">
     <script type="text/javascript" src="FormSubmit.js"></script>
 </head>
 <body>
 <div id="hero"></div>
 
-<div class="retourArriere">
-    <p><img src="Pictures/108524.png" class="ArrowIcon" alt="small arrow icon" height="10" width="10" align="center">Retour en arrière</p>
-</div>
-<div class="barRecherche">
 
-<form method="post" onsubmit=" return validateForm()" name="barRechercheForm" >
-    <input type="search" name="q" id="barre">
-</form>
+<div>
+    <button type="button" class="retourArriere btn btn-secondary"><img src="Pictures/108524.png" class="ArrowIcon" alt="small arrow icon" height="10" width="10" align="center"> en arrière</button>
 </div>
+
+
+
+<div class="barRecherche">
+<form method="post" onsubmit=" return validateForm()" name="barRechercheForm" class="form-group" >
+    <input class=" form-control form-control-sm " type="search" name="q" id="barre">
+</form>
+        </div>
+
 </body>
