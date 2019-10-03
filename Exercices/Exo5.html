@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+</head>
+<body>
+<form name="formImg">
+    <select onchange="affichageImage()" id="fml" name="select">
+        <option value="img/Cambodia.png">Cambodge</option>
+        <option value="img/japan.png">japon</option>
+        <option value="img/korea.png">corée</option>
+        <option value="img/switzerland.png">suisse</option>
+    </select>
+</form>
+<br>
+<img id="img" src="" width="75" height="50">
+<script>
+    function affichageImage() {
+
+        document.getElementById('img').src = document.getElementById("fml").options[document.getElementById("fml").selectedIndex].value
+
+    }
+</script>
+</body>
+</html>

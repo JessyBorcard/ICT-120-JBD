@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form" action="" method="post">
+
+    <input type="text" name="qqch" value="" id="textIput"/>
+
+    <input type="submit" value="GO" id="button" onclick="retourForm()"/>
+
+</form>
+<br>
+<p id="text"></p>
+<script type="text/javascript">
+    function retourForm() {
+
+        var value_champ = document.forms["form"]["qqch"].value;
+        if(value_champ == ""){
+            alert("wow champion, le champ est vide!")
+        }else {
+            document.getElementById("text").innerText = value_champ;
+        }
+    }
+</script>
+</body>
+</html>

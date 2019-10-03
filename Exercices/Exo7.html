@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Message</h1>
+<button id="btn1"  onclick="btn1();return false">B</button>
+<button id="btn2" onclick="btn2();return false" >I</button>
+<button id="btn3" onclick="btn3();return false" >U</button>
+<br>
+<br>
+<textarea id="textarea"></textarea>
+
+
+<script type="text/javascript">
+    var text = document.getElementById("textarea").innerText;
+    function btn1() {
+        text = document.getElementById("textarea").innerText;
+         text = text + prompt();
+         document.getElementById("textarea").innerText +='[<b>' + text + '</b>]';
+    }
+    function btn2() {
+        text = document.getElementById("textarea").innerText;
+        text = text + prompt();
+        document.getElementById("textarea").innerText += '[<i>' + text + '</i>]';
+    }
+    function btn3() {
+        text = document.getElementById("textarea").innerText;
+        text = text + prompt();
+        document.getElementById("textarea").innerText += '[<u>' + text + '</u>]';
+    }
+</script>
+</body>
+</html>

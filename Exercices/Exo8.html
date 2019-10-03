@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>recevoir des news concernant :</p>
+<br>
+<form>
+    <input type="checkbox" id="1"><label>Les Cours</label><br>
+    <input type="checkbox" id="2"><label>Les Manifestations</label><br>
+    <input type="checkbox" id="3"><label>Les Horaires</label><br>
+</form>
+<br>
+<a  href="#" id="all" >Tous | </a><a onclick="none()" href="#">Auncun | </a><a id="invert" href="#">Inverser</a>
+<script type="text/javascript">
+    function all() {
+
+        for (var  i = 1; i <= 3;i++){
+            document.getElementById(i).checked = true;
+
+        }
+    }
+    function none() {
+        for (var  i = 1; i <= 3;i++){
+            document.getElementById(i).checked = false;
+
+        }
+    }
+
+    function invert(){
+    var chk1, chk2, chk3;
+    if( document.getElementById("1").checked == true){
+        chk1 = 1;
+    }else{
+        chk1 = 0;
+    }
+        if( document.getElementById("2").checked == true){
+            chk2 = 1;
+        }else{
+            chk2 = 0;
+        }
+        if( document.getElementById("3").checked == true){
+            chk3 = 1;
+        }else{
+            chk3 = 0;
+        }
+        if (chk1 == 1){
+            document.getElementById("1").checked = false;
+        }else {
+            document.getElementById("1").checked = true;
+        }
+        if (chk2 == 1){
+            document.getElementById("2").checked = false;
+        }else {
+            document.getElementById("2").checked = true;
+        }
+        if (chk3 == 1){
+            document.getElementById("3").checked = false;
+        }else {
+            document.getElementById("3").checked = true;
+        }
+    }
+    document.getElementById("all").addEventListener('click', all);
+    document.getElementById("invert").addEventListener('click', invert);
+</script>
+</body>
+</html>

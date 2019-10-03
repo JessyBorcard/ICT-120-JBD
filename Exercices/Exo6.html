@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="creation()">
+<form>
+    <label>Min</label>
+    <select id="select1">
+    </select>
+    <label>Max</label>
+    <select id="select2">
+
+    </select>
+   <button onclick="tableAffiche();return false">Submit</button>
+</form>
+<br>
+<p id="text"></p>
+<script>
+   
+    function creation() {
+
+
+        value1 = 10;
+        value2 = 99;
+        var  select1 = document.getElementById("select1"),
+            select2 = document.getElementById("select2")
+        for (var i = 0; i <= value1; i++) {
+            var opt = document.createElement('option');
+            opt.value = "option" + i;
+            opt.innerHTML = i;
+            select1.appendChild(opt);
+
+        }
+        for ( i = value1; i <= value2; i++) {
+            opt = document.createElement('option');
+            opt.value = "option" + i;
+            opt.innerHTML = i;
+            select2.appendChild(opt);
+
+        }
+    }
+    function tableAffiche() {
+        var i = document.getElementById("select1").options[document.getElementById("select1").selectedIndex].innerText;
+        parseInt(i);
+        var value2 = document.getElementById("select2").options[document.getElementById("select2").selectedIndex].innerText;
+        parseInt(value2);
+        for(; i <= value2; i++){
+            if(i == value2){
+                document.getElementById("text").textContent += i + ".\n";
+            }else {
+                document.getElementById("text").textContent += i + ", ";
+            }
+        }
+    }
+</script>
+</body>
+</html>
