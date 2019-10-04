@@ -6,22 +6,37 @@
     <link href="FormSubmit.js" as="script" rel="script">
     <link href="css/bootstrap.css" as="style" rel="stylesheet">
     <link href="form.css" as="style" rel="stylesheet">
-    <script type="text/javascript" src="FormSubmit.js"></script>
+
 </head>
-<body>
+<body class="h-100">
 <div id="hero"></div>
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb rounded-0 ">
+        <li class="breadcrumb-item"><a href="Main.html">Home</a></li>
+        <li class="breadcrumb-item active"><a href="#">Transports</a></li>
+    </ol>
+</nav>
+<div class="container-fluid h-75">
 
 
-<div>
-    <button type="button" class="retourArriere btn btn-secondary"><img src="Pictures/108524.png" class="ArrowIcon" alt="small arrow icon" height="10" width="10" align="center"> en arrière</button>
-</div>
 
-
-
-<div class="barRecherche">
+    <div class="row h-50">
+        <div class="col-12"></div>
+    </div>
+    <div class="row justify-content-center ">
+<div class="col-12 col-lg-6 col-md-6 col-sm-6 col-xl-12">
 <form method="post" onsubmit=" return validateForm()" name="barRechercheForm" class="form-group" >
-    <input class=" form-control form-control-sm " type="search" name="q" id="barre">
+    <input class=" form-control form-control-sm w-100 " type="search" name="q" id="barre" >
 </form>
         </div>
+    </div>
 
+    <div class="row fixed-bottom " >
+        <div class="modal-footer alert-dark fixed-bottom rounded-0">
+            <p class="">je suis une truite</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="FormSubmit.js"></script>
 </body>
+</html>
