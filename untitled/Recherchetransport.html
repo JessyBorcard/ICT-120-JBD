@@ -11,19 +11,47 @@
 
 
 </head>
-<body onload="backgroundChange()" id="research">
+<body onload="backgroundChange()" class="bg-dark">
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="Main.html">Recherche</a></li>
-        <li class="breadcrumb-item active"><a href="Recherchetransport.html">Transports</a></li>
+    <ol class="breadcrumb mb-0 bg-dark">
+        <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+        <li class="breadcrumb-item"><a href="Main.html" class="text-white">Recherche</a></li>
+        <li class="breadcrumb-item active"><a href="Recherchetransport.html" class="text-white">Transports</a></li>
     </ol>
 </nav>
-<div id="containercountry">
-    <img src="" id="hero2" >
-    <div id="countryheader"><h1 id="header1"></h1></div>
+<div class="container-fluid h-75 p-0 ">
+    <div class="row  m-0 mb-3   " id ="hero2">
+
+
+
+    <div class="carousel-caption bg-dark " id="countryheader">
+        <h1 id="header1" class="text-white"></h1>
+    </div>
+    </div>
+
+    <div class=" w-100 row justify-content-center  ">
+        <ul class="nav  navbar-light bg-dark justify-content-center  rounded-top">
+            <li class="nav-item">
+                <a class="nav-link  text-white active" href="#">Avion<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Bateau</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Train</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white " href="#" >À pied</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" >À vélo</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row h-75 w-100 border-top rounded-bottom m-0 "></div>
 </div>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src= "FormSubmit.js"></script>

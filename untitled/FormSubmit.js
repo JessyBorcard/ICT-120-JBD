@@ -21,8 +21,18 @@ function backgroundChange() {
 
 
         document.getElementById("header1").innerText = research;
-        document.getElementById("hero2").src = `Pictures/${research}.png`;
+        document.getElementById("hero2").style.backgroundImage = `url("Pictures/${research}.png")`;
 
 
+
+}
+function backgroundChangeSearchBoxin(){
+
+    document.forms["barRechercheForm"]["q"].style.backgroundImage = "url('img_tree.png')";
+
+}
+function backgroundChangeSearchBoxOut(){
+
+    document.forms["barRechercheForm"]["q"].style.backgroundImage = "url('Pictures/search.svg')";
 
 }
