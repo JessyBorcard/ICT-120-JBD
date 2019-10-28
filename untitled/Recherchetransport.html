@@ -1,81 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="FormSubmit.js" rel="script">
-    <link href="Map.js" rel="script">
-    <link href="css/bootstrap.css" as="style" rel="stylesheet">
-    <link href="form.css" rel="stylesheet" type="text/css">
-    <link href="js/bootstrap.js" rel="script">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Title</title>
+                <link href="FormSubmit.js" rel="script">
+                <link href="Map.js" rel="script">
+                <link href="css/bootstrap.css" as="style" rel="stylesheet">
+                <link href="form.css" rel="stylesheet" type="text/css">
+                <link href="js/bootstrap.js" rel="script">
+                <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-maps.css"/>
 
+            </head>
+            <body onload="backgroundChange(); resultsShow()" class="bg-dark w-100 h-100">
 
-</head>
-<body onload="backgroundChange()" class="bg-dark">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 bg-dark">
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item"><a href="Main.html" class="text-white">Recherche</a></li>
+                    <li class="breadcrumb-item active"><a href="Recherchetransport.html" class="text-white">Transports</a></li>
+                </ol>
+            </nav>
+            <div class="container-fluid h-100 p-0 ">
+                <div class="row  m-0 mb-3  align-items-center justify-content-center h-75" id ="hero2">
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb mb-0 bg-dark">
-        <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
-        <li class="breadcrumb-item"><a href="Main.html" class="text-white">Recherche</a></li>
-        <li class="breadcrumb-item active"><a href="Recherchetransport.html" class="text-white">Transports</a></li>
-    </ol>
-</nav>
-<div class="container-fluid h-75 p-0 ">
-    <div class="row  m-0 mb-3   " id ="hero2">
-
-
-
-    <div class="carousel-caption notransparent bg-dark" id="countryheader">
-        <h1 id="header1" class="text-white "></h1>
-    </div>
-    </div>
-
-    <div class=" w-100 row justify-content-center  ">
-        <ul class="nav nav-tabs  navbar-light bg-dark justify-content-center   rounded-top">
-            <li class="nav-item">
-                <a class="nav-link  text-white " href="#">Avion<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Bateau</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Train</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="#" >À pied</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#" >À vélo</a>
-            </li>
-        </ul>
-    </div>
-    <div class="row h-75 w-100 border-top rounded-bottom m-0">
-        <div class="col-3 "></div>
-        <div class="col-6 ">
-            <div class="container-fluid h-100">
-            <div class="row h-25">
-                <div class="col-12">
-                <form class="form-inline">
-                    <div class="form-group">
-
-                    <input class="form-control form-control-sm " type="search" >
-                    <img src="Pictures/2-sided-arrow.png" width="40" height="100">
-
-                    <input class="form-control form-control-sm " type="search" >
-
+                    <div class="position-relative d-flex align-items-center  align-middle bg-dark h-15 w-50 justify-content-center text-center " id="countryheader">
+                        <h1 id="header1" class="text-white "></h1>
+                    </div>
                 </div>
-                </form>
+
+                <div class=" w-100 row justify-content-center m-0  ">
+                    <ul class="nav nav-tabs  navbar-light bg-dark justify-content-center   rounded-top">
+                        <li class="nav-item">
+                            <a class="nav-link  text-white " href="#">Avion<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Bateau</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Train</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white " href="#" >À pied</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" >À vélo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row  w-100 border-top rounded-bottom m-0" style="height: 5000px">
+                    <div class="col-lg-3 col-xl-3 border border-light w-100 col-sm-12">
+                        <div class="row h-50">
+                            <div class="col-12   h-50">
+                                <div class="border border-light d-flex align-items-center m-2 p-2">
+                                    <div class="bg-light rounded w-45 h-auto text-center align-middle " ><p id="origin_place1" class="">Origin Place</p></div>
+                                    <img src="Pictures/2-sided-arrow.png" class="w-10 h-25" >
+                                    <div class="bg-light rounded w-45 h-auto text-center align-middle"><p id="end_place1" >End Place</p></div>
+                                </div>
+                                <div class="col-12 h-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6  col-sm-12">
+
+                        <div class="row h-5 ">
+                            <div class="col-12  ">
+                                <form class=" m-auto h-75  p-0 m-0 align-items-center" name="originendplaceresearch">
+                                    <div class=" form-inline form-group w-100 m-0 p-0 form  h-100  ">
+
+                                        <input class="form-control form-control-sm w-45  " name="qoriginplace" type="search" onchange="originPlaceChangeText()" maxlength="20" >
+
+                                        <img src="Pictures/2-sided-arrow.png" class="w-10 h-auto" >
+                                        <input class="form-control form-control-sm w-45  " type="search"  name="qendplace" onchange="endPlaceChangeText(); pushState()" maxlength="20">
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="row h-75">
+                            <div class="w-100 m-2 h-auto border border-light p-2 " id="results">
+
+
+                            </div>
+                        </div>
+                        <div class="row h-5"><div class="w-100 h-100"><button class="btn btn-info">Submit</button></div></div>
+
+                    </div>
+                    <div class="col-lg-3 col-xl-3 border border-light  col-sm-12">
+
+                        <div class="row h-50">
+                            <div class="  col-12 h-50">
+                                <div class=" border border-light d-flex align-items-center m-2 p-2 ">
+                                    <div class="bg-light rounded w-45 h-auto  text-center align-middle " ><p id="origin_place2" class="">Origin Place</p></div>
+                                    <img src="Pictures/2-sided-arrow.png" class="w-10 h-25" >
+                                    <div class="bg-light rounded w-45 h-auto text-center align-middle"><p id="end_place2" >End Place</p></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row h-75"></div>
-        </div>
-        <div class="col-3 "></div>
-    </div>
-    </div>
-</div>
+
+                <script async src="https://cse.google.com/cse.js?cx=005498312232656787549:l2mroh7gurp"></script>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src= "FormSubmit.js"></script>
-</body>
-</html>
+                <script src="Map.js" type="javascript"></script>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src= "FormSubmit.js"></script>
+            </body>
+            </html>
