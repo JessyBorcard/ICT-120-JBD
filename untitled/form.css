@@ -95,3 +95,6 @@ body, html{
 .text-white-custom:hover{
     color: white;
 }
+.h-3{
+    width: 3% !important;
+}

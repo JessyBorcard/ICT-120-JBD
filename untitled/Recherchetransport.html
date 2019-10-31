@@ -11,7 +11,7 @@
                 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-maps.css"/>
 
             </head>
-            <body onload="backgroundChange(); resultsShow()" class="bg-dark w-100 h-100">
+            <body onload="backgroundChange();showResults() " class="bg-dark w-100 h-100">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 bg-dark">
@@ -48,16 +48,23 @@
                     </ul>
                 </div>
                 <div class="row  w-100 border-top rounded-bottom m-0" style="height: 5000px">
+
                     <div class="col-lg-3 col-xl-3 border border-light w-100 col-sm-12">
-                        <div class="row h-50">
-                            <div class="col-12   h-50">
-                                <div class="border border-light d-flex align-items-center m-2 p-2">
-                                    <div class="bg-light rounded w-45 h-auto text-center align-middle " ><p id="origin_place1" class="">Origin Place</p></div>
-                                    <img src="Pictures/2-sided-arrow.png" class="w-10 h-25" >
-                                    <div class="bg-light rounded w-45 h-auto text-center align-middle"><p id="end_place1" >End Place</p></div>
+                        <div class="row h-5">
+                            <div class="col-12   h-5">
+                                <div class="  border border-light  text-center m-2 p-2">
+                                    <h3 class="text-white  "> Cartes </h3>
                                 </div>
-                                <div class="col-12 h-100"></div>
+
                             </div>
+
+                        </div>
+                        <div class=" row h-15">
+                            <div class="w-100 m-2 h-auto border border-light p-2" id="maplist"></div>
+
+                        </div>
+                        <div class="row h-75">
+                        <div class="w-100 m-2 h-auto border border-light p-2 h-100 w-100 overflow-hidden"><iframe src="https://www.flightconnections.com/flights-from-geneva-gva" class="w-100 h-100 overflow-hidden" ></iframe></div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-6  col-sm-12">
