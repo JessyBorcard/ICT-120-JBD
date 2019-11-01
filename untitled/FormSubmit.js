@@ -1,5 +1,6 @@
 
 var list_maps = [["Flight Connections", "flightconnections", "#"],["Google Maps", "googlemaps", "https://www.google.com/maps"], ["KakaoMap", "kakaomap", "#"]];//init array
+var iframe_list =[[list_maps[0][1],"https://www.flightconnections.com"], [list_maps[2][1],"https://map.kakao.com"]];
 var list_air_lines = [["Google Flights", "googleflights", "https://www.google.com/flights"], ["Korean Air", "koreanair", "https://www.koreanair.com"], ["Easy Jet", "easyjet", "https://www.easyjet.com"], ["Air France", "airfrance", "https://www.airfrance.co.uk/"], ["LuftHansa", "lufthansa", "https://www.lufthansa.com"]];//init array
 var global_research = "";
 var close = "close";
@@ -96,14 +97,14 @@ function showResults() {
          created_element_div_link = document.createElement("A");//creating  an "a" element
 
 
-        if (global_research !== "korea" && i_2 === 1) {//execute the following code if global research is not equal to korea
+        if (global_research !== "korea" && i_2 === 2) {//execute the following code if global research is not equal to korea
             break;
         }
 
 
         created_element_div.id = "div" + list_maps[i_2][1];//set the created_element_div_2's id
         created_element_div_header.id = "header" + list_maps[i_2][1];//set the created_element_header_2's id
-        created_element_div.classList.add("border", "border-light", "p-2", "mb-2");//set the created_element_div_2's classlist
+        created_element_div.classList.add("border", "border-light", "p-2", "mb-2", "h-auto");//set the created_element_div_2's classlist
         created_element_div_header.classList.add("text-light");//set the created_element_header_2's classlist
         created_element_div_link.classList.add("text-white-custom");//set thecreated_element_div_link_2's classlist
         created_element_div_link.innerHTML = list_maps[i_2][0];//set innerHTML
@@ -128,18 +129,38 @@ function showResults() {
 }
 function dropDown() {
     var event_trigger = event.target.id;
+    var trim_string = event_trigger.replace('link','');
     var deleted_element = document.getElementById(event_trigger);
-    deleted_element.remove();
     var created_element_button = document.createElement("BUTTON");
     var created_element_iframe = document.createElement("IFRAME");
+    var buffer;
+    var i_buffer = 0;
+
+
+    deleted_element.remove();
     created_element_iframe.id = "iframe" + event_trigger.replace('link', '');
     created_element_button.id = "button" + event_trigger.replace('link', '');
     document.getElementById("div" + event_trigger.replace('link', '')).appendChild(created_element_button);
     document.getElementById("div" + event_trigger.replace('link', '')).appendChild(created_element_iframe);
     created_element_iframe.setAttribute("width", "100%");
-    created_element_iframe.setAttribute("height", "100%");
+    created_element_iframe.setAttribute("height", "1200px");
+
+    while(i_buffer <= iframe_list.length) {
+        if (iframe_list[i_buffer][0] === trim_string) {
+            buffer = iframe_list[i_buffer][1];
+            break;
+        }
+        i_buffer++;
+    }
+
+
+    created_element_iframe.setAttribute("src", buffer);
+
+
+
+
     created_element_button.setAttribute("onclick", "dropUp();");
-    created_element_button.classList.add("btn", "btn-light", "btn-lg", "btn-block");
+    created_element_button.classList.add("btn", "btn-light", "btn-lg", "btn-block", "rounded-0");
     created_element_button.innerHTML = close;
 }
 function dropUp() {
@@ -161,10 +182,10 @@ var i_buffer = 0;
     created_element_div.id = "div" + trim_string ;
     created_element_div_header.id = "header" + trim_string ;
     created_element_div_link.id = "link" + trim_string ;
-    created_element_div.classList.add("border", "border-light", "p-2", "mb-2");//set the created_element_div_2's classlist
+    created_element_div.classList.add("border", "border-light", "p-2", "mb-2", "h-auto");//set the created_element_div_2's classlist
     created_element_div_header.classList.add("text-light");//set the created_element_header_2's classlist
     created_element_div_link.classList.add("text-white-custom");//set thecreated_element_div_link_2's classlist
-created_element_div_link.setAttribute();
+    created_element_div_link.setAttribute("onclick","dropDown();");
     document.getElementById("header" + trim_string).appendChild(created_element_div_link);
     while(i_buffer <= list_maps.length) {
                 if (list_maps[i_buffer][1] === trim_string) {
