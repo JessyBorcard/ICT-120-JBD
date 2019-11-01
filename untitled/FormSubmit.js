@@ -1,7 +1,8 @@
 
-var list_maps = [["Flight Connections", "flightconnections", "#"],["Google Maps", "googlemaps", "https://www.google.com/maps"], ["KakaoMap", "kakaomap", "https://map.kakao.com/"]];//init array
+var list_maps = [["Flight Connections", "flightconnections", "#"],["Google Maps", "googlemaps", "https://www.google.com/maps"], ["KakaoMap", "kakaomap", "#"]];//init array
 var list_air_lines = [["Google Flights", "googleflights", "https://www.google.com/flights"], ["Korean Air", "koreanair", "https://www.koreanair.com"], ["Easy Jet", "easyjet", "https://www.easyjet.com"], ["Air France", "airfrance", "https://www.airfrance.co.uk/"], ["LuftHansa", "lufthansa", "https://www.lufthansa.com"]];//init array
 var global_research = "";
+var close = "close";
 function validateForm()
 {
     var research = "";
@@ -126,10 +127,55 @@ function showResults() {
 
 }
 function dropDown() {
-    var deleted_element = document.getElementById("link" + list_maps[0][1]);
-    var parent_deleted_element = deleted_element.parentElement.id;
+    var event_trigger = event.target.id;
+    var deleted_element = document.getElementById(event_trigger);
     deleted_element.remove();
-    var created_element_iframe = parent_deleted_element.createElement("iframe");
+    var created_element_button = document.createElement("BUTTON");
+    var created_element_iframe = document.createElement("IFRAME");
+    created_element_iframe.id = "iframe" + event_trigger.replace('link', '');
+    created_element_button.id = "button" + event_trigger.replace('link', '');
+    document.getElementById("div" + event_trigger.replace('link', '')).appendChild(created_element_button);
+    document.getElementById("div" + event_trigger.replace('link', '')).appendChild(created_element_iframe);
+    created_element_iframe.setAttribute("width", "100%");
+    created_element_iframe.setAttribute("height", "100%");
+    created_element_button.setAttribute("onclick", "dropUp();");
+    created_element_button.classList.add("btn", "btn-light", "btn-lg", "btn-block");
+    created_element_button.innerHTML = close;
+}
+function dropUp() {
+    var event_trigger = event.target.id;
+    var deleted_element = document.getElementById(event_trigger);
+    var parent_deleted_element = deleted_element.parentElement;
+    var sibling_deleted_element = document.getElementById("iframe" + event_trigger.replace('button', ''));
+    var trim_string = event_trigger.replace('button','');
+var buffer;
+var i_buffer = 0;
+  var  created_element_div = document.createElement("DIV");//creating  a div element
+  var  created_element_div_header = document.createElement("H1");//creating  h1 element
+  var  created_element_div_link = document.createElement("A");//creating  an "a" element
 
+
+    deleted_element.remove();
+    sibling_deleted_element.remove();
+
+    created_element_div.id = "div" + trim_string ;
+    created_element_div_header.id = "header" + trim_string ;
+    created_element_div_link.id = "link" + trim_string ;
+    created_element_div.classList.add("border", "border-light", "p-2", "mb-2");//set the created_element_div_2's classlist
+    created_element_div_header.classList.add("text-light");//set the created_element_header_2's classlist
+    created_element_div_link.classList.add("text-white-custom");//set thecreated_element_div_link_2's classlist
+created_element_div_link.setAttribute();
+    document.getElementById("header" + trim_string).appendChild(created_element_div_link);
+    while(i_buffer <= list_maps.length) {
+                if (list_maps[i_buffer][1] === trim_string) {
+                    buffer = list_maps[i_buffer][0];
+                    break;
+                }
+                i_buffer++;
+            }
+
+
+
+        created_element_div_link.innerText = buffer;//set innerHTML
 
 }
