@@ -6,13 +6,17 @@ var global_research = "";
 var close = "close";
 function validateForm()
 {
+    var index = document.getElementById("parent");
     var research = "";
-    research = document.forms["barRechercheForm"]["q"].value;
+    var  research_text = "";
+    research = index.options[index.selectedIndex].value;
+    research_text = index.options[index.selectedIndex].innerText;
         if(research === ""){
                 alert("vous devez rechercher quelque chose");
         }else {
 
                 localStorage.research = research;
+            localStorage. research_text  =  research_text ;
                 window.open("Recherchetransport.html");
 
         }
@@ -22,24 +26,16 @@ function validateForm()
 function backgroundChange() {
 
     var research = localStorage.research;
+    var research_text = localStorage.research_text;
     global_research = research;
-
-        document.getElementById("header1").innerText = research;
+    global_research_text = research_text;
+        document.getElementById("header1").innerText = research_text;
         document.getElementById("hero2").style.backgroundImage = `url("Pictures/${research}.png")`;
 
 
 
 }
-function backgroundChangeSearchBoxin(){
 
-    document.forms["barRechercheForm"]["q"].style.backgroundImage = "url('')";
-
-}
-function backgroundChangeSearchBoxOut(){
-
-    document.forms["barRechercheForm"]["q"].style.backgroundImage = "url('Pictures/search.svg')";
-
-}
 function originPlaceChangeText() {
     document.getElementById("origin_place1").innerText = document.forms["originendplaceresearch"]["qoriginplace"].value;
     document.getElementById("origin_place2").innerText = document.forms["originendplaceresearch"]["qoriginplace"].value;
@@ -70,7 +66,7 @@ function showResults() {
        var created_element_div_link = document.createElement("A");//creating  an "a" element
 
 
-        if (global_research !== "korea" && i_1 === 1) {//execute the following code if global research is not equal to korea
+        if (global_research !== "KR" && i_1 === 1) {//execute the following code if global research is not equal to korea
             i_1++;//i_1+1
         }
 
@@ -97,7 +93,7 @@ function showResults() {
          created_element_div_link = document.createElement("A");//creating  an "a" element
 
 
-        if (global_research !== "korea" && i_2 === 2) {//execute the following code if global research is not equal to korea
+        if (global_research !== "KR" && i_2 === 2) {//execute the following code if global research is not equal to korea
             break;
         }
 
