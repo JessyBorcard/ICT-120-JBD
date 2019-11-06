@@ -100,4 +100,6 @@ body, html{
 }
 .h-3{
     width: 3% !important;
-}
+}html, body{
+    height: 100%;
+ }

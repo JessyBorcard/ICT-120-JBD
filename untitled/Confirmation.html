@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
+
 </head>
-<body>
-<div class="container-fluid h-100 w-100">
-    <div class="row">
-        <div class="col-12">
-            <form class="form-inline form-control">
-                <input type="checkbox"><label></label>
-                <input type="checkbox">
+<body class="h-100 w-100" >
+<div class="container-fluid h-100 w-100 m-0 p-0">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 bg-dark">
+            <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+            <li class="breadcrumb-item"><a href="Main.html" class="text-white">Recherche</a></li>
+            <li class="breadcrumb-item"><a href="Recherchetransport.html" class="text-white">Transport</a></li>
+            <li class="breadcrumb-item active"><a href="Confirmation.html" class="text-white">Confirmation</a></li>
+        </ol>
+    </nav>
+    <div class="row h-10">
+        <div class="col-12 h-100">
+            <form class=" form-control h-100 text-center">
+                <div class="form-check form-check-inline">
+                <input type="checkbox" name="chk1" class="form-check-input" value="option1"><label class="form-check-label">Permis de séjour</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input type="checkbox" name="chk2" class="form-check-input" value="option2"><label class="form-check-label">Carte d'identitée Suisse</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input type="checkbox" name="chk3" class="form-check-input" value="option3"><label class="form-check-label">Passport Suisse Suisse</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"  type="radio"><label class="form-check-label">en appuyant sur se bouton, vous prennez connaisance la loi sur les baggages en avion</label>
+                </div>
+                <div>
+                    <textarea>Notes Personnelles</textarea>
+                </div>
             </form>
         </div>
     </div>
