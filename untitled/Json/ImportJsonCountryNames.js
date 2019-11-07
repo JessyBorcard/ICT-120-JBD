@@ -258,3 +258,22 @@ function testReadJson() {
 
     }
 }
+
+function readEveryTownsJson() {
+    var input, file, fr, event_trigger;
+
+    input = "node_modules/all-countries-and-cities-json/package.json";
+
+    file = input;
+    var blob = new Blob([file],{type :'application/json'});
+    fr = new FileReader();
+    fr.onload = function receivedText() {
+        let lines = fr.result;
+        alert(lines);
+        var newArr = JSON.parse(lines);
+        alert(newArr);
+    };
+    fr.readAsText(blob);
+
+
+}
