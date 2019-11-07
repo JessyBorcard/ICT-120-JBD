@@ -391,21 +391,11 @@ function addInfo() {
     current_data = document.getElementById(event_trigger);
     var created_element_li = document.createElement("li");
     var created_element_ul = document.createElement("ul");
-    if (document.body.contains(current_data)) {
-        created_element_li.id = event_trigger;
-        created_element_li.innerText = event_trigger;
-        created_element_li.classList.add("text-white");
-        document.getElementById("searchinfo").appendChild(created_element_li);
-        if (event_trigger === list_foot[0][1]) {
-            created_element_ul.id = event_trigger + list_foot[0][1] + "ul";
-            created_element_li.appendChild(created_element_ul);
-            created_element_li = document.createElement("li");
-            created_element_li.id = event_trigger + list_foot[0][1] + "li";
-            created_element_ul.appendChild(created_element_li);
-    } else{
+  
 
 
-    }
 }
+
+function citiesChange() {
 
 }
