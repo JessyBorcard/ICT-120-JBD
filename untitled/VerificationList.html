@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
 </head>
-<body onload="f1()">
-<div id="maplist"></div>
-<div id="results" onchange="f()"></div>
+<body >
+<div class="container-fluid h-100 w-100 m-0 p-0">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0 bg-dark">
+        <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+        <li class="breadcrumb-item"><a href="Main.html" class="text-white">Recherche</a></li>
+        <li class="breadcrumb-item"><a href="Recherchetransport.html" class="text-white">Transport</a></li>
+        <li class="breadcrumb-item active"><a href="Confirmation.html" class="text-white">Verification</a></li>
+    </ol>
+</nav>
 
+<div class="border border-dark m-4">
+<div class="border border-dark m-2" id="departure">
+<div class="d-flex" >
+    <h1>Départ</h1>
+    <div class="m-3 w-100">
+        <form class="w-100"><input type="text" class="w-100" id="input1"></form>
+    </div>
+</div>
+
+
+
+
+</div>
+<div class="border border-dark m-2" id="arrival">
+    <div class="d-flex" >
+    <h1>Arrivée</h1>
+    <div class="m-3 w-100">
+        <form class="w-100"><input type="text" class="w-100" disabled id="input2"></form>
+    </div>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+</div>
+<button class="btn-dark btn-block mt-4" onclick="addPeople()">Comfirmer</button>
+<script type="text/javascript" src="FormSubmit.js"></script>
 </body>
 </html>
