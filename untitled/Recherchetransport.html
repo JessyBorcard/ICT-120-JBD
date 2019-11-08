@@ -11,7 +11,7 @@
                 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-maps.css"/>
 
             </head>
-            <body onload="backgroundChange(); readTownsJson(); showResults();" class="bg-dark w-100 h-100">
+            <body onload="backgroundChange();readTownsJson('CH', 'select1');readTownsJson(localStorage.research, 'select2');  showResults();" class="bg-dark w-100 h-100">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 bg-dark">
@@ -72,10 +72,15 @@
                                 <form class=" m-auto h-75  p-0 m-0 align-items-center" name="originendplaceresearch">
                                     <div class=" form-inline form-group w-100 m-0 p-0 form  h-100  ">
 
-                                        <input class="form-control form-control-sm w-45  " name="qoriginplace" type="search" onchange="originPlaceChangeText()" maxlength="20" >
+                                        <select onclick="" id="select1" name="select1"  class=" w-45 form-control">
+
+                                        </select>
 
                                         <img src="Pictures/2-sided-arrow.png" class="w-10 h-auto" >
-                                        <input class="form-control form-control-sm w-45  " type="search"  name="qendplace" onchange="endPlaceChangeText(); pushState()" maxlength="20">
+                                        <select onclick="" id="select2" name="select2"  class="w-45  form-control" >
+
+
+                                        </select>
 
                                     </div>
                                 </form>
@@ -105,11 +110,11 @@
                         </div>
                         <div class="row h-auto"></div>
                         <div class=" border border-light m-2" ><ul id="searchinfo">
-                            <li>Avion</li>
-                            <li>Train</li>
-                            <li>bateau</li>
-                            <li>À pied</li>
-                            <li>À vélo</li>
+                            <li class="text-white">Avion</li>
+                            <li class="text-white">Train</li>
+                            <li class="text-white">bateau</li>
+                            <li class="text-white">À pied</li>
+                            <li class="text-white">À vélo</li>
                         </ul></div>
 
                     </div>

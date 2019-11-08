@@ -389,9 +389,13 @@ function addInfo() {
 
     var event_trigger = event.target.id;
     current_data = document.getElementById(event_trigger);
+    var index1 = document.getElementById("select1");
+    var index2 = document.getElementById("select2");
+    var  option1 = index1.options[index1.selectedIndex].value;
+    var  option2 = index2.options[index2.selectedIndex].value;
     var created_element_li = document.createElement("li");
     var created_element_ul = document.createElement("ul");
-  
+    console.log(option1, option2);
 
 
 }
