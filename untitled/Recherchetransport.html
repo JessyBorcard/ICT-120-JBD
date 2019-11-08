@@ -31,19 +31,19 @@
                 <div class=" w-100 row justify-content-center m-0  ">
                     <ul class="nav nav-tabs  navbar-light bg-dark justify-content-center   rounded-top">
                         <li class="nav-item">
-                            <a class="nav-link  text-white " id="avion" href="#" onclick="filterNavPlane(); addInfo()">Avion<span class="sr-only">(current)</span></a>
+                            <a class="nav-link  text-white " id="avion"  onclick="addInfo(); filterNavPlane(); ">Avion<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="train" href="#" onclick="filterNavTrain(); addInfo() ">Train</a>
+                            <a class="nav-link text-white" id="train"  onclick="addInfo(); filterNavTrain(); ">Train</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="bateau" href="#" onclick="filterNavBoat(); addInfo()">Bateau</a>
+                            <a class="nav-link text-white" id="bateau"  onclick="addInfo(); filterNavBoat(); ">Bateau</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white " id="pied" href="#" onclick="filterNavFoot(); addInfo()">À pied</a>
+                            <a class="nav-link text-white " id="pied"  onclick=" addInfo(); filterNavFoot();">À pied</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="velo" href="#" onclick="filterNavBy(); addInfo()" >À vélo</a>
+                            <a class="nav-link text-white" id="velo" onclick=" addInfo(); filterNavBy();" >À vélo</a>
                         </li>
                     </ul>
                 </div>
@@ -93,7 +93,7 @@
 
                             </div>
                         </div>
-                        <div class="row h-5"><div class="w-100 h-100"><a href="Confirmation.html"><button class="btn btn-block btn-light" >Submit</button></a></div></div>
+                        <div class="row h-5"><div class="w-100 h-100"><a href="Confirmation.html"><button class="btn btn-block btn-light" >Passer à la page comfirmation</button></a></div></div>
 
                     </div>
                     <div class="col-lg-3 col-xl-3 border border-light  col-sm-12">
@@ -110,11 +110,11 @@
                         </div>
                         <div class="row h-auto"></div>
                         <div class=" border border-light m-2" ><ul id="searchinfo">
-                            <li class="text-white">Avion</li>
-                            <li class="text-white">Train</li>
-                            <li class="text-white">bateau</li>
-                            <li class="text-white">À pied</li>
-                            <li class="text-white">À vélo</li>
+                            <li class="text-white" >Avion<ul id="infoavion"></ul></li>
+                            <li class="text-white" >Train<ul id="infotrain"></ul></li>
+                            <li class="text-white" >bateau<ul id="infobateau"></ul></li>
+                            <li class="text-white" >À pied<ul id="infopied"></ul></li>
+                            <li class="text-white" >À vélo<ul id="infovelo"></ul></li>
                         </ul></div>
 
                     </div>

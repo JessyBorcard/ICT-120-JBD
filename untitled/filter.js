@@ -12,6 +12,7 @@ var parent = document.getElementById("results");
 var child_nodes = "";
 var i = 0;
 
+var a = 0;
 function filterNavTrain() {
 
 
@@ -21,7 +22,7 @@ function filterNavTrain() {
     if(!document.body.contains(current_data)) {
         while (i <= child_nodes.length) {
             if (child_nodes[i] === undefined) {
-               break;
+                break;
             }
             child_nodes[i].remove();
 
@@ -36,7 +37,7 @@ function showTrainResults() {
     var i_1 = 0;
     var length_rail_road = rail_road_list.length;
 
-    while  (i_1 <=  length_rail_road -1) {//execute the following code if i_1 is inferior or equal to the length of the array list_air_lines
+    while  (i_1 <=  length_rail_road - 1) {//execute the following code if i_1 is inferior or equal to the length of the array list_air_lines
 
         var created_element_div = document.createElement("DIV");//creating  a div element
         var created_element_div_header = document.createElement("H1");//creating  h1 element
@@ -159,15 +160,15 @@ function filterNavPlane() {
     current_data = document.getElementById("div" + list_air_lines[0][1]);
     child_nodes = parent.childNodes;
     if(!document.body.contains(current_data)) {
-    while (i <= child_nodes.length) {
-        if (child_nodes[i] === undefined) {
-            break;
-        }
-        child_nodes[i].remove();
+        while (i <= child_nodes.length) {
+            if (child_nodes[i] === undefined) {
+                break;
+            }
+            child_nodes[i].remove();
 
-    }
+        }
         showResults();
-}
+    }
 
 
 
@@ -271,9 +272,9 @@ function showResults() {
         i_1++;
     }
     while  (i_2 <= length_array_list_maps) {//execute the following code if i_2 is inferior or equal to the length of the array list_maps
-    if (event_trigger === "avion"){
-break;
-    }
+        if (event_trigger === "avion"){
+            break;
+        }
 
 
 
@@ -387,19 +388,36 @@ function dropUp() {
 }
 function addInfo() {
 
+
+
+
     var event_trigger = event.target.id;
-    current_data = document.getElementById(event_trigger);
+    var current_data = document.getElementById("info"+event_trigger);
+    var created_element_li = document.createElement("li");
+
     var index1 = document.getElementById("select1");
     var index2 = document.getElementById("select2");
     var  option1 = index1.options[index1.selectedIndex].value;
     var  option2 = index2.options[index2.selectedIndex].value;
-    var created_element_li = document.createElement("li");
-    var created_element_ul = document.createElement("ul");
-    console.log(option1, option2);
+    var already_existing = document.getElementById(option1 + option2);
+    created_element_li.innerText = option1 + "<>" + option2;
+    created_element_li.id = option1 + option2;
+    if(current_data.contains(already_existing)){
+        return "good";
 
+    }
+    else
+    {
+
+
+
+
+
+        current_data.appendChild(created_element_li);
+
+
+
+    }
 
 }
 
-function citiesChange() {
-
-}
