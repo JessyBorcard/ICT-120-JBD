@@ -11,8 +11,13 @@ var current_data = "";
 var parent = document.getElementById("results");//get the element and save
 var child_nodes = "";
 var i = 0;
-
+var plane = "avion";
+var train = "train";
+var boat = "bateau";
+var bycicle = "velo";
+var foot = "pied";
 var a = 0;
+var changed_element = document.getElementById("button");
 function filterNavTrain() {
 
 
@@ -20,6 +25,7 @@ function filterNavTrain() {
     child_nodes = parent.childNodes;//get the parent's element child
 
     if(!document.body.contains(current_data)) {
+
         while (i <= child_nodes.length) {
             if (child_nodes[i] === undefined) {//will break if the child's index is undefined
                 break;
@@ -61,6 +67,7 @@ function showTrainResults() {
         document.getElementById("header" + rail_road_list[i_1][1]).appendChild(created_element_div_link);//append created_element_link_2 to the  element
         i_1++;
     }
+    changed_element.id = train;
 
 }
 function showfootResult(){
@@ -91,6 +98,7 @@ function showfootResult(){
         document.getElementById("header" + list_foot[i_1][1]).appendChild(created_element_div_link);//append created_element_link_2 to the  element
         i_1++;
     }
+    changed_element.id = foot;
 
 
 }
@@ -122,6 +130,7 @@ function showBoatResults(){
         document.getElementById("header" + list_boats [i_1][1]).appendChild(created_element_div_link);//append created_element_link_2 to the  element
         i_1++;
     }
+    changed_element.id = boat;
 
 
 }
@@ -154,6 +163,8 @@ function showByResults() {
         document.getElementById("header" + list_by[i_1][1]).appendChild(created_element_div_link);//append created_element_link_2 to the  element
         i_1++;
     }
+    changed_element.id = bycicle;
+
 }
 function filterNavPlane() {
 
@@ -234,14 +245,14 @@ function filterNavFoot() {
 
 function showResults() {
 
+
     var event_trigger = event.target.id;//save the trigger event
     var i_2 = 0;//init var
 
     var length_array_air_lines = list_air_lines.length;//get the length of the table
     var length_array_list_maps = list_maps.length;//get the length of the table
     var i_1 = 0;//init var
-
-
+    changed_element.id = plane;
 
 
 
@@ -420,6 +431,6 @@ function addInfo() {
 
 
     }
+    changed_element.id = "button";
 
 }
-

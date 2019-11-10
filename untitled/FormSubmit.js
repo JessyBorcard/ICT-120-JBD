@@ -4,20 +4,25 @@ var global_research = "";
 
 function validateForm()
 {
-    var index = document.getElementById("parent");//get and save an element
+    var index1 = document.getElementById("parent2");//get and save an element
+    var index2 = document.getElementById("parent1");
     var research = ""; //Init var
     var  research_text = "";//Init var
-    research = index.options[index.selectedIndex].value;//save the selected index's value
-    research_text = index.options[index.selectedIndex].innerText;//save the selected index's innertext
-    if(research === ""){
-        alert("vous devez rechercher quelque chose");//it will never goes here, except if the script didn't loaded properly(i think?)
-    }else {
+    var research2 = ""; //Init var
+    var  research_text2 = "";//Init var
+    research = index1.options[index1.selectedIndex].value;//save the selected index's value
+    research_text = index1.options[index1.selectedIndex].innerText;//save the selected index's innertext
+    research2 = index2.options[index2.selectedIndex].value;//save the selected index's value
+    research_text2 = index2.options[index2.selectedIndex].innerText;//save the selected index's innertext
+
 
         localStorage.research = research;//save research in a local storage
-        localStorage. research_text  =  research_text ;//save research in a local storage
+        localStorage.research_text  =  research_text ;//save research in a local storage
+        localStorage.research2 = research2;//save research in a local storage
+        localStorage.research_text2  =  research_text2 ;//save research in a local storage
         window.open("Recherchetransport.html");//open a "new" tab
 
-    }
+
 
 }
 

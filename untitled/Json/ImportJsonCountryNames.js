@@ -253,7 +253,15 @@ function testReadJson() {
         var created_option = document.createElement("OPTION");//create and element
         created_option.value = country_object[i]["code"];//save the json value
         created_option.innerHTML = country_object[i]["name"];//save the json value
-        document.getElementById("parent").appendChild(created_option);//Append a child to his parent
+        document.getElementById("parent1").appendChild(created_option);//Append a child to his parent
+
+
+    }
+    for(i in country_object) {
+        var created_option = document.createElement("OPTION");//create and element
+        created_option.value = country_object[i]["code"];//save the json value
+        created_option.innerHTML = country_object[i]["name"];//save the json value
+        document.getElementById("parent2").appendChild(created_option);//Append a child to his parent
 
 
     }

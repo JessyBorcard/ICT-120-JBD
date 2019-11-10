@@ -11,7 +11,7 @@
                 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest-maps.css"/>
 
             </head>
-            <body onload="backgroundChange();readTownsJson('CH', 'select1');readTownsJson(localStorage.research, 'select2');  showResults();" class="bg-dark w-100 h-100">
+            <body onload="backgroundChange();readTownsJson(localStorage.research2, 'select1');readTownsJson(localStorage.research, 'select2');  showResults();" class="bg-dark w-100 h-100">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 bg-dark">
@@ -31,19 +31,19 @@
                 <div class=" w-100 row justify-content-center m-0  ">
                     <ul class="nav nav-tabs  navbar-light bg-dark justify-content-center   rounded-top">
                         <li class="nav-item">
-                            <a class="nav-link  text-white " id="avion"  onclick="addInfo(); filterNavPlane(); ">Avion<span class="sr-only">(current)</span></a>
+                            <a class="nav-link  text-white " id="avion"  onclick=" filterNavPlane(); ">Avion<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="train"  onclick="addInfo(); filterNavTrain(); ">Train</a>
+                            <a class="nav-link text-white" id="train"  onclick=" filterNavTrain(); ">Train</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="bateau"  onclick="addInfo(); filterNavBoat(); ">Bateau</a>
+                            <a class="nav-link text-white" id="bateau"  onclick="filterNavBoat(); ">Bateau</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white " id="pied"  onclick=" addInfo(); filterNavFoot();">À pied</a>
+                            <a class="nav-link text-white " id="pied"  onclick=" filterNavFoot();">À pied</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="velo" onclick=" addInfo(); filterNavBy();" >À vélo</a>
+                            <a class="nav-link text-white" id="velo" onclick=" filterNavBy();" >À vélo</a>
                         </li>
                     </ul>
                 </div>
@@ -93,7 +93,8 @@
 
                             </div>
                         </div>
-                        <div class="row h-5"><div class="w-100 h-100"><a href="Confirmation.html"><button class="btn btn-block btn-light" >Passer à la page comfirmation</button></a></div></div>
+                        <div class="row h-auto"><div class="w-100 h-100"><button class="btn btn-block btn-light" onclick="addInfo()" id="button">Comfirmer la selection</button></div></div>
+                        <div class="row h-auto"><div class="w-100 h-100"><a href="Confirmation.html"><button class="btn btn-block btn-light" >Passer à la page comfirmation</button></a></div></div>
 
                     </div>
                     <div class="col-lg-3 col-xl-3 border border-light  col-sm-12">
